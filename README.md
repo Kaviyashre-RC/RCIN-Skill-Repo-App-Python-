@@ -7,16 +7,15 @@ This project is a pro-code evolution of an internal low-code application built u
 ## Problem Statement
 
 Organizations often lack a scalable and centralized system to:
-
-Track employee skills and proficiency levels
-Maintain consistent and validated skill data
-Enable real-time updates and visibility
-Support data-driven capability planning
+* Track employee skills and proficiency levels
+* Maintain consistent and validated skill data
+* Enable real-time updates and visibility
+* Support data-driven capability planning
 
 Existing solutions (e.g., static forms or SharePoint lists) are:
--Manual and inefficient
--Inconsistent in data quality
--Not extensible for analytics or AI
+* Manual and inefficient
+* Inconsistent in data quality
+* Not extensible for analytics or AI
 
 ## Objective
 To build a production-ready backend system that:
@@ -30,47 +29,51 @@ To build a production-ready backend system that:
 This project focuses on building a backend-first architecture, exposing REST APIs that can be consumed by any frontend or external system.
 
 ## Core Modules
-Skill Master Management
-User Skill Management
-Skill Request & Approval Workflow
-Admin Analytics
-Notification & Scheduler
+1. Skill Master Management
+2. User Skill Management
+3. Skill Request & Approval Workflow
+4. Admin Analytics
+5. Notification & Scheduler
 
 ## Tech Stack
-Backend
-Python (FastAPI)
-Database
-PostgreSQL
-Cloud & Deployment
-Microsoft Azure
-Azure Container Apps
-Docker
-Infrastructure
-Bicep (Infrastructure as Code)
-Monitoring
-Azure Monitor + Application Insights
+- Backend
+- Python (FastAPI)
+- Database
+- PostgreSQL
+- Cloud & Deployment
+  - Microsoft Azure
+  - Azure Container Apps
+- Docker
+- Infrastructure
+- Bicep (Infrastructure as Code)
+- Monitoring
+  - Azure Monitor + Application Insights
 
 ## API Overview
-Auth / User Context
-GET /me → Get current user details
-Skills (Master Data)
-GET /skills → Fetch all skills
-POST /skills → Create new skill
-PUT /skills/{id} → Update skill
-PATCH /skills/{id}/status → Activate/Deactivate
-User Skills
-GET /users/{id}/skills → Get user skills
-POST /users/{id}/skills → Add skill
-PUT /users/{id}/skills/{skillId} → Update proficiency
-DELETE /users/{id}/skills/{skillId} → Remove skill
-Skill Requests
-POST /skill-requests → Request new skill
-GET /skill-requests → View requests
-PATCH /skill-requests/{id}/approve → Approve
-PATCH /skill-requests/{id}/reject → Reject
-Analytics
-GET /analytics/skills/distribution → Skill distribution
-GET /analytics/skills/{id}/users → Users per skill
++ Auth / User Context
+  + GET /me → Get current user details
+
++ Skills (Master Data)
+  + GET /skills → Fetch all skills
+  + POST /skills → Create new skill
+  + PUT /skills/{id} → Update skill
+  + PATCH /skills/{id}/status → Activate/Deactivate
+  
++ User Skills
+  + GET /users/{id}/skills → Get user skills
+  + POST /users/{id}/skills → Add skill
+  + PUT /users/{id}/skills/{skillId} → Update proficiency
+  + DELETE /users/{id}/skills/{skillId} → Remove skill
+
++ Skill Requests
+  + POST /skill-requests → Request new skill
+  + GET /skill-requests → View requests
+  + PATCH /skill-requests/{id}/approve → Approve
+  + PATCH /skill-requests/{id}/reject → Reject
+
++ Analytics
+  + GET /analytics/skills/distribution → Skill distribution
+  + GET /analytics/skills/{id}/users → Users per skill
 
 ## Development Approach
 Current Phase
@@ -79,18 +82,17 @@ Modular architecture (routes → services → repositories)
 API contract-first development
 
 ## Cloud Architecture
-Azure Container Apps → Backend hosting
-Azure Database for PostgreSQL → Data storage
-Azure Container Registry → Image storage
-Azure Monitor → Logging and observability
-
-Infrastructure will be provisioned using Bicep templates for reproducibility.
+* Azure Container Apps → Backend hosting
+* Azure Database for PostgreSQL → Data storage
+* Azure Container Registry → Image storage
+* Azure Monitor → Logging and observability
+* Infrastructure will be provisioned using Bicep templates for reproducibility.
 
 ## Future Enhancements
-🔐 Azure Active Directory (Entra ID) integration
-⏰ Scheduled reminders using Azure Functions
-📊 Advanced analytics dashboards
-📄 Resume auto-generation from skills
-🤖 AI-based skill recommendations (Azure OpenAI / Foundry)
-📂 Certification upload and parsing
+🔐 Azure Active Directory (Entra ID) integration <br>
+⏰ Scheduled reminders using Azure Functions <br>
+📊 Advanced analytics dashboards <br>
+📄 Resume auto-generation from skills <br>
+🤖 AI-based skill recommendations (Azure OpenAI / Foundry) <br>
+📂 Certification upload and parsing <br>
 
